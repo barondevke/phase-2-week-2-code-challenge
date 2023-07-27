@@ -2,14 +2,12 @@
   margin: 50px 2px
 }
 
-.botCollection {
-  padding-left: 10%;
-  margin-left: 10%;
-}
+.botCollection {}
 
 .App {
   text-align: center;
   background-color: darkorange;
+
 }
 
 .botImage {

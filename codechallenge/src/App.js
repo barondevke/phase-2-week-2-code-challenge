@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import './App.css';
 import BotCollection from './components/BotCollection';
-import YourBotArmy from './components/YourBotArmy';
+
 
 function App() {
   const [data, setData] = useState([])
@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className="App">
-      <YourBotArmy />
+
       <BotCollection data={data} />
 
     </div>

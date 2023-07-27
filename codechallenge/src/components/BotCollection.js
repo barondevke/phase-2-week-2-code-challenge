@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import Bot from './Bot'
 import { Row, Col } from 'react-bootstrap'
+import YourBotArmy from './YourBotArmy'
 
 const BotCollection = (props) => {
     const [data, setData] = useState([])
     const [added, setAdded] = useState([])
 
-    let botArray = []
+
+
     let botData = props.data
 
 
@@ -15,13 +17,32 @@ const BotCollection = (props) => {
 
     return (
         <div className='botCollection'>
+            <YourBotArmy selected={added} />
             <Row>
 
 
                 {
                     botData.map(element => {
 
-                        return (<Bot avatar={element.avatar_url} bot_class={element.bot_class} catchphrase={element.catchphrase} health={element.health} armor={element.armor} damage={element.damage} name={element.name} />)
+                        const handleClick = () => {
+                            if (!added.includes(element)) {
+                                let botArray = [...added, element]
+                                setAdded(botArray)
+                                console.log(added)
+
+                            }
+
+                        }
+
+
+                        return (
+                            <div className='col-3' >
+                                <Bot key={element.id} avatar={element.avatar_url} bot_class={element.bot_class} catchphrase={element.catchphrase} health={element.health} armor={element.armor} damage={element.damage} name={element.name} />
+                                <button onClick={handleClick}>Add to your army</button>
+
+
+                            </div>
+                        )
 
                     })
                 }

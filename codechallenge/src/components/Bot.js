@@ -5,7 +5,7 @@ const Bot = (props) => {
     let imgSrc = props.avatar_url
 
     return (
-        <div className='bot col-3'>
+        <div className='bot '>
 
 
 
