@@ -17,6 +17,10 @@ const BotCollection = (props) => {
 
     return (
         <div className='botCollection'>
+            {if(added.length !== 0 ){
+                return(<h3>Your army</h3>)
+            }
+            }
             <YourBotArmy selected={added} />
             <Row>
 
